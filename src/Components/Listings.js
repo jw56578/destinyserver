@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import bizz from "../bizz.json";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { Link } from "react-router-dom";
 
 const Listings = (props) => {
   return (
@@ -27,7 +28,7 @@ const Listings = (props) => {
           {bizz.map((bizz, idx) => (
             <TableRow key={bizz.name}>
               <TableCell component="th" scope="row">
-                {bizz.name}
+                <Link to={`/bizz/${bizz.id}`}>{bizz.name}</Link>
               </TableCell>
               <TableCell>{bizz["description"]}</TableCell>
               <TableCell>{bizz["hours"]}</TableCell>
@@ -35,7 +36,7 @@ const Listings = (props) => {
               <TableCell>
                 <DeleteIcon
                   // add onClick method here
-                  onClick={() => props.removeCar(idx)}
+                  onClick={() => props.removeBizz(idx)}
                   className="icon text-red"
                 />
               </TableCell>

@@ -1,7 +1,25 @@
 import { combineReducers } from "redux";
 
-const user = (state = null) => state;
+const bizzes = (state = [], action) => {
+  switch (action.type) {
+    case "ADD_BIZZ":
+      return [...state, action.value];
+    case "REMOVE_BIZZ":
+      const bizzes = [...state];
+      bizzes.splice(action.value, 1);
+      return bizzes;
+    default:
+      return state;
+  }
+};
 
-const bizz = (state = []) => state;
+const loggedIn = (state = [], action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return (state = action.value);
+    default:
+      return state;
+  }
+};
 
-export default combineReducers({ user, bizz });
+export default combineReducers({ bizzes, loggedIn });

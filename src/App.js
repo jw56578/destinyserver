@@ -3,13 +3,17 @@ import Router from "./Router";
 import Navigation from "./Components/Navigation";
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./Redux/store";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navigation />
-      <Router />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navigation />
+        <Router />
+      </BrowserRouter>
+    </Provider>
   );
 }
 
