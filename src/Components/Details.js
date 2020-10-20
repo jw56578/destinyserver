@@ -3,7 +3,7 @@ import { Container, Paper } from "@material-ui/core";
 
 const Details = (props) => {
   const id = props.match.params.id;
-  const bizz = props.bizz.find((b) => b.id == id);
+  const bizz = props.bizzes.find((b) => b.id == id);
 
   return (
     <Container maxWidth="lg" className="car-container">
