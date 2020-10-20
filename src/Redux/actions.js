@@ -11,3 +11,10 @@ export const removeBizz = (index) => {
     value: index,
   };
 };
+
+export const login = (bool) => {
+  return {
+    type: "LOGIN",
+    value: bool,
+  };
+};

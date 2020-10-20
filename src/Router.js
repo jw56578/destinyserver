@@ -4,33 +4,15 @@ import { Switch, Route } from "react-router";
 import Login from "./Components/Login";
 import Listings from "./Components/Listings";
 import Details from "./Components/Details";
-
-// Write checkAuth function here
-// const checkAuth = () => {
-//   const cookies = cookie.parse(document.cookie);
-//   return cookies["loggedIn"] ? true : false;
-// };
-
-// Check the cookies for a cookie called "loggedIn"
-
-// Write ProtectedRoute function here
-// const ProtectedRoute = ({ component: Component, ...rest }) => {
-//   return (
-//     <Route
-//       {...rest}
-//       render={(props) =>
-//         checkAuth() ? <Component {...props} /> : <Redirect to="/login" />
-//       }
-//     />
-//   );
-// };
+// import AddListing from "./Components/AddListing";
 
 const Router = () => {
   return (
     <Switch>
-      <Route path="/login" component={Login} />
-      <Route path="/" component={Listings} />
-      <Route path="/bizz/:id" component={Details} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/" component={Listings} />
+      {/* <Route exact path="/add" component={AddListing} /> */}
+      <Route exact path="/bizz/:id" component={Details} />
     </Switch>
   );
 };
