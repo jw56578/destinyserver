@@ -22,4 +22,13 @@ const loggedIn = (state = [], action) => {
   }
 };
 
-export default combineReducers({ bizzes, loggedIn });
+const user = (state = "", action) => {
+  switch (action.type) {
+    case "SET_USER":
+      return action.value;
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ bizzes, loggedIn, user });

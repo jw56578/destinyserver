@@ -30,12 +30,12 @@ export const login = (bool) => {
   };
 };
 
-// export const logout = (bool) => {
-//   return {
-//     type: "LOGOUT",
-//     value: bool,
-//   }
-// }
+export const setUser = (username) => {
+  return {
+    type: "SET_USER",
+    value: username,
+  };
+};
 
 // export const getCoordinates = (mapStuff) =>{
 //   return{

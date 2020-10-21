@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
-import Navigation from "../components/Navigation";
+import Navigation from "../Components/Navigation";
 
 const mapStateToProps = (state) => {
   return {
     loggedIn: state.loggedIn,
+    user: state.user,
   };
 };
 

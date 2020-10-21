@@ -10,7 +10,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 import cookie from "cookie";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
   return (
     <div>
@@ -59,7 +59,7 @@ const Navigation = () => {
       <Typography color="text-primary">
         {cookies.loggedIn && (
           <span>
-            Welcome <span style={{ color: "hotpink" }}>username</span>!
+            Welcome <span style={{ color: "hotpink" }}>{props.user}</span>!
           </span>
         )}
       </Typography>
