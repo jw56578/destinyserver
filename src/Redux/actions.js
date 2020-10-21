@@ -1,7 +1,18 @@
 export const addBizz = (bizzes) => {
-  return {
-    type: "ADD_BIZZ",
-    value: bizzes,
+  return async (dispatch) => {
+    fetch(
+      `https://maps.google.com/maps/api/geocode/json?key=AIzaSyCQwEqWmC9UH_CpoiMFQf6bh96SkTMAZ0Y&address=${bizzes.address}`
+    )
+      .then((res) => res.json())
+      .then((response) => {
+        bizzes.lat = response.results[0].geometry.location.lat;
+        bizzes.lng = response.results[0].geometry.location.lng;
+        const action = {
+          type: "ADD_BIZZ",
+          value: bizzes,
+        };
+        dispatch(action);
+      });
   };
 };
 
@@ -18,3 +29,17 @@ export const login = (bool) => {
     value: bool,
   };
 };
+
+// export const logout = (bool) => {
+//   return {
+//     type: "LOGOUT",
+//     value: bool,
+//   }
+// }
+
+// export const getCoordinates = (mapStuff) =>{
+//   return{
+//     lat: "",
+//     lng: "",
+//   }
+// }

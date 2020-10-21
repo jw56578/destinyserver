@@ -1,5 +1,11 @@
 import React from "react";
-import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+} from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 
@@ -18,16 +24,31 @@ const Navigation = () => {
             <Link to="/">Listings</Link>
           </li>
           <li className="nav-list-item">
-            <Link to="/Add">Add</Link>
+            {document.cookie === "loggedIn=true" && (
+              <div>
+                <Link to="/Add">Add</Link>{" "}
+                <Button
+                  onClick={() => {
+                    document.cookie = "loggedIn=";
+                    window.location.replace("/login");
+                  }}
+                >
+                  Logout
+                </Button>
+              </div>
+            )}
           </li>
-          <li
-            className="nav-list-item"
-            // onClick={() => {
-            //   document.cookie = "loggedIn=";
-            //   window.location.replace("/");
-            // }}
-          >
-            <Link to="/login">Login</Link>
+          <li className="nav-list-item">
+            {document.cookie !== "loggedIn=true" && (
+              <Button
+                onClick={() => {
+                  document.cookie = "loggedIn=";
+                  window.location.replace("/login");
+                }}
+              >
+                Login
+              </Button>
+            )}
           </li>
         </ul>
       </Toolbar>

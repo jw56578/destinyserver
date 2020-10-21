@@ -14,7 +14,7 @@ const Details = (props) => {
         <h4>{bizz.hours}</h4>
         <h5>{bizz.description}</h5>
       </Typography>
-      <Map width={500} height={400} address={bizz.address} />
+      <Map width={500} height={400} lat={bizz.lat} lng={bizz.lng} />
     </Container>
   );
 };

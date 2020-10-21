@@ -1,6 +1,6 @@
 import { Button, Container, TextField } from "@material-ui/core";
 import React, { useState } from "react";
-import Map from "./Map";
+import { Redirect } from "react-router-dom";
 
 const AddListing = (props) => {
   const [listing, setListing] = useState({
@@ -8,6 +8,9 @@ const AddListing = (props) => {
     address: "",
     hours: "",
     description: "",
+    lat: 0,
+    lng: 0,
+    redirect: false,
   });
 
   const handleTextChange = (e) => {
@@ -21,6 +24,9 @@ const AddListing = (props) => {
     const payload = { ...listing };
     payload.id = props.bizzes.length + 1;
     props.addBizz(payload);
+    setListing({
+      redirect: true,
+    });
   };
 
   return (
@@ -67,8 +73,8 @@ const AddListing = (props) => {
           >
             Save
           </Button>
+          {listing.redirect && <Redirect to="/" />}
         </form>
-        <Map width={400} height={500} address={listing.address} />
       </Container>
     </div>
   );
