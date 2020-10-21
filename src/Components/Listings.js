@@ -7,7 +7,7 @@ import {
   TableHead,
   TableRow,
 } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
 import { Link } from "react-router-dom";
 
 const Listings = (props) => {
@@ -36,14 +36,14 @@ const Listings = (props) => {
         <TableBody>
           {props.bizzes.map((bizz, id) => (
             <TableRow key={bizz.id}>
-              <TableCell style={{ color: "hotpink" }}>
+              <TableCell style={{ color: "#D99A8A" }}>
                 <Link to={`/bizz/${bizz.id}`}>{bizz["name"]}</Link>
               </TableCell>
               <TableCell>{bizz["description"]}</TableCell>
               <TableCell>{bizz["hours"]}</TableCell>
               <TableCell>{bizz["address"]}</TableCell>
               <TableCell>
-                <DeleteIcon
+                <HighlightOffIcon
                   onClick={() => props.removeBizz(id)}
                   style={{ color: "red" }}
                 />

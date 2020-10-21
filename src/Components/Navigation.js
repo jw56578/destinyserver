@@ -6,30 +6,30 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
 import { Link } from "react-router-dom";
 import cookie from "cookie";
+import LocalCafeIcon from "@material-ui/icons/LocalCafe";
 
 const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
   return (
     <div>
-      <AppBar position="relative">
+      <AppBar position="relative" color="#577271">
         <Toolbar>
-          <IconButton color="secondary">
-            <MenuIcon />
+          <IconButton color="#642D3D">
+            <LocalCafeIcon />
           </IconButton>
           <Typography variant="h6" style={{ flexGrow: "1" }}>
             Coffee Buzz
           </Typography>
           <ul className="nav-list">
             <li className="nav-list-item">
-              <Link to="/">Listings</Link>
+              <Link to="/">LISTINGS</Link>
             </li>
             <li className="nav-list-item">
               {document.cookie === "loggedIn=true" && (
                 <div>
-                  <Link to="/Add">Add</Link>{" "}
+                  <Link to="/Add">ADD</Link>{" "}
                   <Button
                     onClick={() => {
                       document.cookie = "loggedIn=";
@@ -59,7 +59,7 @@ const Navigation = (props) => {
       <Typography color="text-primary">
         {cookies.loggedIn && (
           <span>
-            Welcome <span style={{ color: "hotpink" }}>{props.user}</span>!
+            Welcome <span style={{ color: "pink" }}>{props.user}</span>!
           </span>
         )}
       </Typography>
