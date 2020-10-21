@@ -16,17 +16,27 @@ const Listings = (props) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Description</TableCell>
-            <TableCell>Hours</TableCell>
-            <TableCell>Address</TableCell>
-            <TableCell>Delete</TableCell>
+            <TableCell>
+              <h3>Name</h3>
+            </TableCell>
+            <TableCell>
+              <h3>Description</h3>
+            </TableCell>
+            <TableCell>
+              <h3>Hours</h3>
+            </TableCell>
+            <TableCell>
+              <h3>Address</h3>
+            </TableCell>
+            <TableCell>
+              <h3>Delete</h3>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {props.bizzes.map((bizz, id) => (
             <TableRow key={bizz.id}>
-              <TableCell>
+              <TableCell style={{ color: "hotpink" }}>
                 <Link to={`/bizz/${bizz.id}`}>{bizz["name"]}</Link>
               </TableCell>
               <TableCell>{bizz["description"]}</TableCell>

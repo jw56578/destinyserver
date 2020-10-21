@@ -39,6 +39,17 @@ export default {
       lat: 29.884032,
       lng: -97.940062,
     },
+    {
+      id: 5,
+      name: "Mochas & Javas",
+      description:
+        "Coffeehouse offering drinks made with locally roasted beans, plus light food, smoothies & pastries.",
+      hours: "6am - 6pm",
+      address: "102 Wonder World Dr # 406, San Marcos, TX 78666",
+      lat: 29.864408,
+      lng: -97.962894,
+    },
   ],
   loggedIn: false,
+  user: "username",
 };
