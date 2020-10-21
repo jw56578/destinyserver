@@ -5,9 +5,9 @@ const bizzes = (state = [], action) => {
     case "ADD_BIZZ":
       return [...state, action.value];
     case "REMOVE_BIZZ":
-      const bizzes = [...state];
-      bizzes.splice(action.value, 1);
-      return bizzes;
+      const newBizzes = [...state];
+      newBizzes.splice(action.value, 1);
+      return newBizzes;
     default:
       return state;
   }

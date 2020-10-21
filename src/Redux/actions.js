@@ -1,7 +1,7 @@
-export const addBizz = (bizz) => {
+export const addBizz = (bizzes) => {
   return {
     type: "ADD_BIZZ",
-    value: bizz,
+    value: bizzes,
   };
 };
 

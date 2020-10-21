@@ -11,7 +11,7 @@ const Navigation = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" style={{ flexGrow: "1" }}>
-          Small Bizz Buzz
+          Coffee Buzz
         </Typography>
         <ul className="nav-list">
           <li className="nav-list-item">
@@ -24,10 +24,10 @@ const Navigation = () => {
             className="nav-list-item"
             onClick={() => {
               document.cookie = "loggedIn=";
-              window.location.replace("/login");
+              window.location.replace("/");
             }}
           >
-            Logout
+            Login
           </li>
         </ul>
       </Toolbar>

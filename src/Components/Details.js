@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Typography } from "@material-ui/core";
-import bizzes from "../bizz.json";
+import Map from "./Map";
 
 const Details = (props) => {
   const id = props.match.params.id;
-  const bizz = bizzes.find((bizz) => bizz.id == id);
-
-  console.log(bizzes);
+  const bizz = props.bizzes.find((bizz) => bizz.id == id);
   console.log(id);
   return (
     <Container maxWidth="sm" className="car-container">
@@ -16,6 +14,7 @@ const Details = (props) => {
         <h4>{bizz.hours}</h4>
         <h5>{bizz.description}</h5>
       </Typography>
+      <Map width={500} height={400} address={bizz.address} />
     </Container>
   );
 };

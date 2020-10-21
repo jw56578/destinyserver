@@ -13,6 +13,17 @@
   margin-top: 25px !important;
 }
 
+.add-form {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  width: 30%;
+}
+
+.add-button {
+  margin-top: 25px !important;
+}
+
 .card-container {
   display: flex;
   justify-content: space-between;
@@ -34,7 +45,7 @@ ul {
 }
 
 .text-gray {
-  color: gray
+  color: gray;
 }
 
 .nav-list {
