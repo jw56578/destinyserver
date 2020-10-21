@@ -22,12 +22,12 @@ const Navigation = () => {
           </li>
           <li
             className="nav-list-item"
-            onClick={() => {
-              document.cookie = "loggedIn=";
-              window.location.replace("/");
-            }}
+            // onClick={() => {
+            //   document.cookie = "loggedIn=";
+            //   window.location.replace("/");
+            // }}
           >
-            Login
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </Toolbar>
