@@ -48,12 +48,7 @@ class App extends Component {
               label="Password"
               type="password"
             />
-            <Button
-              type="submit"
-              className="login-button"
-              variant="contained"
-              color="primary"
-            >
+            <Button type="submit" className="button" variant="contained">
               Login
             </Button>
           </form>

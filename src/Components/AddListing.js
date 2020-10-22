@@ -59,7 +59,7 @@ const AddListing = (props) => {
           />
           <Button
             variant="contained"
-            color="secondary"
+            className="button"
             type="submit"
             size="small"
             style={{

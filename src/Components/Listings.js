@@ -36,16 +36,18 @@ const Listings = (props) => {
         <TableBody>
           {props.bizzes.map((bizz, id) => (
             <TableRow key={bizz.id}>
-              <TableCell style={{ color: "#D99A8A" }}>
+              <TableCell style={{ color: "#592825" }}>
                 <Link to={`/bizz/${bizz.id}`}>{bizz["name"]}</Link>
               </TableCell>
               <TableCell>{bizz["description"]}</TableCell>
-              <TableCell>{bizz["hours"]}</TableCell>
+              <TableCell style={{ color: "#592825" }}>
+                {bizz["hours"]}
+              </TableCell>
               <TableCell>{bizz["address"]}</TableCell>
               <TableCell>
                 <HighlightOffIcon
                   onClick={() => props.removeBizz(id)}
-                  style={{ color: "red" }}
+                  style={{ color: "#B46746" }}
                 />
               </TableCell>
             </TableRow>

@@ -14,7 +14,7 @@ const Navigation = (props) => {
   const cookies = cookie.parse(document.cookie);
   return (
     <div>
-      <AppBar position="relative" color="#577271">
+      <AppBar position="relative" color="#577271" className="nav-bar">
         <Toolbar>
           <IconButton color="#642D3D">
             <LocalCafeIcon />
@@ -24,12 +24,16 @@ const Navigation = (props) => {
           </Typography>
           <ul className="nav-list">
             <li className="nav-list-item">
-              <Link to="/">LISTINGS</Link>
+              <Button>
+                <Link to="/">LISTINGS</Link>
+              </Button>
             </li>
             <li className="nav-list-item">
               {document.cookie === "loggedIn=true" && (
                 <div>
-                  <Link to="/Add">ADD</Link>{" "}
+                  <Button>
+                    <Link to="/Add">ADD</Link>
+                  </Button>
                   <Button
                     onClick={() => {
                       document.cookie = "loggedIn=";
@@ -58,7 +62,7 @@ const Navigation = (props) => {
       </AppBar>
       <Typography color="text-primary">
         {cookies.loggedIn && (
-          <span>
+          <span className="welcome-message">
             Welcome <span style={{ color: "pink" }}>{props.user}</span>!
           </span>
         )}
