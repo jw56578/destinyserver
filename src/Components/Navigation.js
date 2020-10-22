@@ -16,10 +16,13 @@ const Navigation = (props) => {
     <div>
       <AppBar position="relative" color="#577271" className="nav-bar">
         <Toolbar>
-          <IconButton color="#642D3D">
+          <IconButton style={{ color: "#D0955D" }}>
             <LocalCafeIcon />
           </IconButton>
-          <Typography variant="h6" style={{ flexGrow: "1" }}>
+          <Typography
+            variant="h5"
+            style={{ flexGrow: "1", color: "#592825", letterSpacing: "5px" }}
+          >
             Coffee Buzz
           </Typography>
           <ul className="nav-list">
