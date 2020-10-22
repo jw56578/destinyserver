@@ -66,7 +66,17 @@ const Navigation = (props) => {
       <Typography color="text-primary">
         {cookies.loggedIn && (
           <span className="welcome-message">
-            Welcome <span style={{ color: "pink" }}>{props.user}</span>!
+            Welcome{" "}
+            <span
+              style={{
+                color: "#E8D8CC",
+                letterSpacing: "3px",
+                fontWeight: "bold",
+              }}
+            >
+              {props.user}
+            </span>
+            !
           </span>
         )}
       </Typography>

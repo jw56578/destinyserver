@@ -12,9 +12,9 @@ const Details = (props) => {
         <h2>{bizz.name}</h2>
         <h4>{bizz.address}</h4>
         <h4>{bizz.hours}</h4>
-        <h5>{bizz.description}</h5>
+        <p>{bizz.description}</p>
       </Typography>
-      <Map width={500} height={400} lat={bizz.lat} lng={bizz.lng} />
+      <Map className="map" lat={bizz.lat} lng={bizz.lng} />
     </Container>
   );
 };
